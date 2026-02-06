@@ -28,6 +28,12 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       max-width: 400px;
     }
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +46,9 @@
     <option value="dog">Dog</option>
     <option value="cat">Cat</option>
     <option value="rabbit">Rabbit</option>
+    <option value="bird">Bird</option>
+    <option value="fish">Fish</option>
+    <option value="hamster">Hamster</option>
   </select>
 
   <div class="info-box" id="careInfo">
@@ -53,6 +62,7 @@
 
       if (animal === "dog") {
         careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg" alt="Dog">
           <h3>Dog Care 🐶</h3>
           <ul>
             <li>Daily exercise</li>
@@ -60,8 +70,10 @@
             <li>Regular vet visits</li>
           </ul>
         `;
-      } else if (animal === "cat") {
+      } 
+      else if (animal === "cat") {
         careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg" alt="Cat">
           <h3>Cat Care 🐱</h3>
           <ul>
             <li>Clean litter box</li>
@@ -69,8 +81,10 @@
             <li>Regular grooming</li>
           </ul>
         `;
-      } else if (animal === "rabbit") {
+      } 
+      else if (animal === "rabbit") {
         careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Oryctolagus_cuniculus_Rcdo.jpg" alt="Rabbit">
           <h3>Rabbit Care 🐰</h3>
           <ul>
             <li>Hay-based diet</li>
@@ -78,7 +92,41 @@
             <li>Gentle handling</li>
           </ul>
         `;
-      } else {
+      }
+      else if (animal === "bird") {
+        careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Budgerigar_green.jpg" alt="Bird">
+          <h3>Bird Care 🐦</h3>
+          <ul>
+            <li>Clean cage regularly</li>
+            <li>Fresh seeds and water</li>
+            <li>Social interaction</li>
+          </ul>
+        `;
+      }
+      else if (animal === "fish") {
+        careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Goldfish3.jpg" alt="Fish">
+          <h3>Fish Care 🐠</h3>
+          <ul>
+            <li>Clean tank</li>
+            <li>Correct water temperature</li>
+            <li>Do not overfeed</li>
+          </ul>
+        `;
+      }
+      else if (animal === "hamster") {
+        careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Syrian_hamster.jpg" alt="Hamster">
+          <h3>Hamster Care 🐹</h3>
+          <ul>
+            <li>Exercise wheel</li>
+            <li>Fresh bedding</li>
+            <li>Gentle handling</li>
+          </ul>
+        `;
+      }
+      else {
         careInfo.innerHTML = `<p>Select an animal to see care instructions.</p>`;
       }
     }
