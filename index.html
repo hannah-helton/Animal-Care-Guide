@@ -1,72 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Animal Care Guide</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f6f8;
-    }
-
-    header {
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .container {
-      padding: 20px;
-    }
-
-    .card {
-      background-color: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .dropdown {
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px;
-      border-radius: 5px;
-      font-size: 18px;
-    }
-
-    .dropdown:hover {
-      background-color: #45a049;
-    }
-
-    .dropdown-content {
-      display: none;
-      margin-top: 10px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #333;
-      color: white;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Animal Care Guide</h1>
-  <p>Click each animal to view care tips 🐾</p>
-</header>
-
 <div class="container">
 
   <div class="card">
@@ -105,19 +36,40 @@
     </div>
   </div>
 
+  <div class="card">
+    <div class="dropdown" onclick="toggleDropdown('fish')">🐠 Fish Care</div>
+    <div class="dropdown-content" id="fish">
+      <ul>
+        <li>Clean the tank regularly</li>
+        <li>Do not overfeed fish</li>
+        <li>Check water temperature</li>
+        <li>Use a water filter</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="dropdown" onclick="toggleDropdown('reptile')">🦎 Reptile Care</div>
+    <div class="dropdown-content" id="reptile">
+      <ul>
+        <li>Provide proper heating and lighting</li>
+        <li>Feed species-appropriate food</li>
+        <li>Keep habitat clean</li>
+        <li>Monitor temperature daily</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="dropdown" onclick="toggleDropdown('rabbit')">🐰 Rabbit Care</div>
+    <div class="dropdown-content" id="rabbit">
+      <ul>
+        <li>Provide fresh hay daily</li>
+        <li>Give clean water</li>
+        <li>Allow time to exercise</li>
+        <li>Keep living space clean</li>
+      </ul>
+    </div>
+  </div>
+
 </div>
-
-<footer>
-  <p>© 2026 Animal Care Guide</p>
-</footer>
-
-<script>
-  function toggleDropdown(id) {
-    const content = document.getElementById(id);
-    content.style.display =
-      content.style.display === "block" ? "none" : "block";
-  }
-</script>
-
-</body>
-</html>
