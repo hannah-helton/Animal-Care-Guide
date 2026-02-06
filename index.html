@@ -1,58 +1,88 @@
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animal Care Guide</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f7f5;
+      padding: 20px;
+    }
 
-  <div class="card">
-    <h2>🐶 Dog Care</h2>
-    <select>
-      <option>Select a care tip</option>
-      <option>Feed fresh food and water daily</option>
-      <option>Walk dogs regularly</option>
-      <option>Visit the vet for checkups</option>
-      <option>Groom fur and trim nails</option>
-    </select>
+    h1 {
+      color: #2c6e49;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .info-box {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Animal Care Guide 🐾</h1>
+
+  <label for="animalSelect">Choose an animal:</label><br>
+  <select id="animalSelect" onchange="showCare()">
+    <option value="">-- Select an animal --</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    <option value="rabbit">Rabbit</option>
+  </select>
+
+  <div class="info-box" id="careInfo">
+    <p>Select an animal to see care instructions.</p>
   </div>
 
-  <div class="card">
-    <h2>🐱 Cat Care</h2>
-    <select>
-      <option>Select a care tip</option>
-      <option>Clean the litter box daily</option>
-      <option>Provide healthy cat food</option>
-      <option>Give toys and scratching posts</option>
-      <option>Schedule vet visits</option>
-    </select>
-  </div>
+  <script>
+    function showCare() {
+      const animal = document.getElementById("animalSelect").value;
+      const careInfo = document.getElementById("careInfo");
 
-  <div class="card">
-    <h2>🐦 Bird Care</h2>
-    <select>
-      <option>Select a care tip</option>
-      <option>Clean the cage regularly</option>
-      <option>Provide fresh food and water</option>
-      <option>Allow safe flying time</option>
-      <option>Keep birds in a calm space</option>
-    </select>
-  </div>
+      if (animal === "dog") {
+        careInfo.innerHTML = `
+          <h3>Dog Care 🐶</h3>
+          <ul>
+            <li>Daily exercise</li>
+            <li>Fresh water and balanced food</li>
+            <li>Regular vet visits</li>
+          </ul>
+        `;
+      } else if (animal === "cat") {
+        careInfo.innerHTML = `
+          <h3>Cat Care 🐱</h3>
+          <ul>
+            <li>Clean litter box</li>
+            <li>Scratching posts</li>
+            <li>Regular grooming</li>
+          </ul>
+        `;
+      } else if (animal === "rabbit") {
+        careInfo.innerHTML = `
+          <h3>Rabbit Care 🐰</h3>
+          <ul>
+            <li>Hay-based diet</li>
+            <li>Spacious enclosure</li>
+            <li>Gentle handling</li>
+          </ul>
+        `;
+      } else {
+        careInfo.innerHTML = `<p>Select an animal to see care instructions.</p>`;
+      }
+    }
+  </script>
 
-  <div class="card">
-    <h2>🐠 Fish Care</h2>
-    <select>
-      <option>Select a care tip</option>
-      <option>Clean the tank weekly</option>
-      <option>Do not overfeed</option>
-      <option>Check water temperature</option>
-      <option>Use a water filter</option>
-    </select>
-  </div>
-
-  <div class="card">
-    <h2>🐰 Rabbit Care</h2>
-    <select>
-      <option>Select a care tip</option>
-      <option>Provide fresh hay daily</option>
-      <option>Give clean water</option>
-      <option>Allow daily exercise</option>
-      <option>Keep enclosure clean</option>
-    </select>
-  </div>
-
-</div>
+</body>
+</html>
