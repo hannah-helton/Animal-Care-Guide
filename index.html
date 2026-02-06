@@ -1,122 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Animal Care Guide</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f7f5;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #2c6e49;
-    }
-
-    select {
-      padding: 10px;
-      font-size: 16px;
-      margin: 10px 0;
-      width: 250px;
-    }
-
-    .info-box {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 420px;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Animal Care Guide 🐾</h1>
-
-  <!-- PETS DROPDOWN -->
-  <label for="petSelect"><strong>Pets</strong></label><br>
-  <select id="petSelect" onchange="showPetCare()">
-    <option value="">-- Select a pet --</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="rabbit">Rabbit</option>
-    <option value="bird">Bird</option>
-    <option value="fish">Fish</option>
-    <option value="hamster">Hamster</option>
-  </select>
-
-  <br>
-
-  <!-- FARM ANIMALS DROPDOWN -->
-  <label for="farmSelect"><strong>Farm Animals</strong></label><br>
-  <select id="farmSelect" onchange="showFarmCare()">
-    <option value="">-- Select a farm animal --</option>
-    <option value="cow">Cow</option>
-    <option value="chicken">Chicken</option>
-    <option value="horse">Horse</option>
-    <option value="pig">Pig</option>
-    <option value="sheep">Sheep</option>
-  </select>
-
-  <div class="info-box" id="careInfo">
-    <p>Select an animal to see care instructions.</p>
-  </div>
-
-  <script>
-    function showPetCare() {
-      document.getElementById("farmSelect").value = "";
-      const pet = document.getElementById("petSelect").value;
-      const careInfo = document.getElementById("careInfo");
-
-      if (pet === "dog") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg">
-          <h3>Dog Care 🐶</h3>
-          <ul>
-            <li>Daily exercise</li>
-            <li>Fresh food and water</li>
-            <li>Regular vet visits</li>
-          </ul>
-        `;
-      } else if (pet === "cat") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg">
-          <h3>Cat Care 🐱</h3>
-          <ul>
-            <li>Clean litter box</li>
-            <li>Scratching posts</li>
-            <li>Groom regularly</li>
-          </ul>
-        `;
-      } else if (pet === "rabbit") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Oryctolagus_cuniculus_Rcdo.jpg">
-          <h3>Rabbit Care 🐰</h3>
-          <ul>
-            <li>Hay-based diet</li>
-            <li>Room to hop</li>
-            <li>Gentle handling</li>
-          </ul>
-        `;
-      } else if (pet === "bird") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Budgerigar_green.jpg">
-          <h3>Bird Care 🐦</h3>
-          <ul>
-            <li>Clean cage</li>
-            <li>Fresh food and water</li>
-            <li>Social interaction</li>
-          </ul>
-        `;
-      } else if (pet === "fish") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Goldfish3.jpg">
-          <h3>Fi
+else if (farm === "goat") {
+  careInfo.innerHTML = `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Goat_2.jpg">
+    <h3>Goat Care 🐐</h3>
+    <ul>
+      <li>Strong fencing</li>
+      <li>Grass, hay, and minerals</li>
+      <li>Shelter from weather</li>
+    </ul>
+  `;
+}
+else if (farm === "duck") {
+  careInfo.innerHTML = `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Mallard2.jpg">
+    <h3>Duck Care 🦆</h3>
+    <ul>
+      <li>Access to water</li>
+      <li>Grain and greens</li>
+      <li>Safe nesting area</li>
+    </ul>
+  `;
+}
+else if (farm === "turkey") {
+  careInfo.innerHTML = `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/TurkeyMale.jpg">
+    <h3>Turkey Care 🦃</h3>
+    <ul>
+      <li>Large outdoor space</li>
+      <li>High-protein feed</li>
+      <li>Protection from predators</li>
+    </ul>
+  `;
+}
+else if (farm === "donkey") {
+  careInfo.innerHTML = `
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Donkey_in_field.jpg">
+    <h3>Donkey Care 🐴</h3>
+    <ul>
+      <li>Pasture and shelter</li>
+      <li>Regular hoof care</li>
+      <li>Companionship</li>
+    </ul>
+  `;
+}
