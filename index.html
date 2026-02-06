@@ -8,9 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f8fb;
-      margin: 0;
-      padding: 0;
       text-align: center;
+      margin: 0;
     }
 
     header {
@@ -24,36 +23,42 @@
     }
 
     button {
-      padding: 10px 15px;
+      padding: 10px 14px;
       margin: 5px;
       border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      border-radius: 6px;
       background-color: #4caf50;
       color: white;
-      font-size: 16px;
+      font-size: 15px;
+      cursor: pointer;
     }
 
     button:hover {
-      background-color: #45a049;
+      background-color: #43a047;
     }
 
     .card {
       background: white;
-      max-width: 500px;
+      max-width: 520px;
       margin: auto;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      color: #4caf50;
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     ul {
       text-align: left;
       line-height: 1.6;
+    }
+
+    h2 {
+      color: #4caf50;
     }
   </style>
 </head>
@@ -61,55 +66,94 @@
 
 <header>
   <h1>Animal Care Guide</h1>
-  <p>Click a button to learn how to care for each animal</p>
+  <p>Click an animal to learn how to care for it 🐾</p>
 </header>
 
 <div class="buttons">
   <button onclick="showDog()">Dog</button>
   <button onclick="showCat()">Cat</button>
   <button onclick="showRabbit()">Rabbit</button>
+  <button onclick="showBird()">Bird</button>
+  <button onclick="showFish()">Fish</button>
+  <button onclick="showTurtle()">Turtle</button>
 </div>
 
 <div class="card" id="animalCard">
   <h2>Choose an animal 🐾</h2>
-  <p>Click a button above to see care tips.</p>
+  <p>Select a button above to see care tips.</p>
 </div>
 
 <script>
   function showDog() {
-    document.getElementById("animalCard").innerHTML = `
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="Dog">
       <h2>🐕 Dog Care</h2>
       <ul>
         <li>Feed a balanced diet</li>
-        <li>Provide fresh water daily</li>
-        <li>Exercise and walk every day</li>
-        <li>Visit the vet regularly</li>
-      </ul>
-    `;
+        <li>Fresh water daily</li>
+        <li>Daily exercise</li>
+        <li>Regular vet visits</li>
+      </ul>`;
   }
 
   function showCat() {
-    document.getElementById("animalCard").innerHTML = `
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba" alt="Cat">
       <h2>🐈 Cat Care</h2>
       <ul>
-        <li>Feed quality cat food</li>
-        <li>Clean litter box daily</li>
-        <li>Provide toys and scratching posts</li>
-        <li>Schedule vet checkups</li>
-      </ul>
-    `;
+        <li>Quality cat food</li>
+        <li>Clean litter box</li>
+        <li>Toys and scratching posts</li>
+        <li>Vet checkups</li>
+      </ul>`;
   }
 
   function showRabbit() {
-    document.getElementById("animalCard").innerHTML = `
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3" alt="Rabbit">
       <h2>🐰 Rabbit Care</h2>
       <ul>
-        <li>Provide fresh hay and veggies</li>
-        <li>Keep cage clean</li>
-        <li>Handle gently</li>
-        <li>Give chew toys</li>
-      </ul>
-    `;
+        <li>Fresh hay and veggies</li>
+        <li>Clean living space</li>
+        <li>Gentle handling</li>
+        <li>Chew toys</li>
+      </ul>`;
+  }
+
+  function showBird() {
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1501706362039-c6e80949b42b" alt="Bird">
+      <h2>🐦 Bird Care</h2>
+      <ul>
+        <li>Clean cage regularly</li>
+        <li>Fresh food and water</li>
+        <li>Daily interaction</li>
+        <li>Safe flying space</li>
+      </ul>`;
+  }
+
+  function showFish() {
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1520301255226-bf5f144451c1" alt="Fish">
+      <h2>🐠 Fish Care</h2>
+      <ul>
+        <li>Clean tank</li>
+        <li>Correct water temperature</li>
+        <li>Do not overfeed</li>
+        <li>Use a filter</li>
+      </ul>`;
+  }
+
+  function showTurtle() {
+    animalCard.innerHTML = `
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Turtle">
+      <h2>🐢 Turtle Care</h2>
+      <ul>
+        <li>UV light and heat</li>
+        <li>Clean water</li>
+        <li>Balanced diet</li>
+        <li>Dry basking area</li>
+      </ul>`;
   }
 </script>
 
