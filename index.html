@@ -1,96 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Animal Care Guide</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f8fb;
       margin: 0;
-      padding: 0;
+      background-color: #f4f7f6;
+      color: #333;
     }
-
     header {
-      background-color: #4caf50;
+      background-color: #4CAF50;
       color: white;
       padding: 20px;
       text-align: center;
     }
-
-    .container {
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background-color: #388E3C;
+      padding: 10px;
     }
-
-    .animal-card {
+    nav button {
       background: white;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
     }
-
+    nav button:hover {
+      background-color: #e0e0e0;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
     h2 {
-      color: #4caf50;
+      color: #4CAF50;
     }
-
     ul {
-      padding-left: 20px;
+      line-height: 1.8;
     }
-
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: #ddd;
+      padding: 15px;
+      background-color: #eee;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>🐶 Animal Care Guide 🐱</h1>
-    <p>Learn how to take care of your animals</p>
+    <h1>Animal Care Guide</h1>
+    <p>Learn how to properly care for different animals</p>
   </header>
 
-  <div class="container">
+  <nav>
+    <button onclick="showSection('dogs')">Dogs</button>
+    <button onclick="showSection('cats')">Cats</button>
+    <button onclick="showSection('birds')">Birds</button>
+    <button onclick="showSection('reptiles')">Reptiles</button>
+  </nav>
 
-    <div class="animal-card">
+  <main>
+    <section id="dogs" class="active">
       <h2>Dog Care</h2>
       <ul>
-        <li>Feed twice a day with dog food</li>
-        <li>Provide fresh water daily</li>
-        <li>Exercise every day</li>
-        <li>Visit the vet regularly</li>
+        <li>Provide fresh water and nutritious food daily</li>
+        <li>Take dogs for regular walks and exercise</li>
+        <li>Schedule regular vet checkups</li>
+        <li>Groom fur and trim nails as needed</li>
+        <li>Give attention, training, and love</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="animal-card">
+    <section id="cats">
       <h2>Cat Care</h2>
       <ul>
-        <li>Feed cat food once or twice a day</li>
-        <li>Clean the litter box daily</li>
-        <li>Provide toys and scratching posts</li>
-        <li>Regular vet checkups</li>
+        <li>Clean litter box daily</li>
+        <li>Provide fresh water and balanced food</li>
+        <li>Brush fur regularly</li>
+        <li>Provide scratching posts and toys</li>
+        <li>Visit the vet for vaccinations</li>
       </ul>
-    </div>
+    </section>
 
-    <div class="animal-card">
+    <section id="birds">
       <h2>Bird Care</h2>
       <ul>
-        <li>Clean cage weekly</li>
-        <li>Fresh food and water daily</li>
-        <li>Social interaction</li>
-        <li>Safe toys for stimulation</li>
+        <li>Keep cage clean and spacious</li>
+        <li>Provide fresh water and bird-safe food</li>
+        <li>Allow time outside the cage for exercise</li>
+        <li>Provide toys for mental stimulation</li>
+        <li>Avoid drafts and extreme temperatures</li>
       </ul>
-    </div>
+    </section>
 
-  </div>
+    <section id="reptiles">
+      <h2>Reptile Care</h2>
+      <ul>
+        <li>Maintain proper heat and lighting</li>
+        <li>Provide species-appropriate food</li>
+        <li>Keep enclosure clean</li>
+        <li>Monitor humidity levels</li>
+        <li>Handle gently and minimally</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Animal Care Guide</p>
+    <p>Animal Care Guide © 2026</p>
   </footer>
 
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
