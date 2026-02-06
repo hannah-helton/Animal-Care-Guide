@@ -17,23 +17,6 @@
       text-align: center;
     }
 
-    nav {
-      background-color: #333;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
     .container {
       padding: 20px;
     }
@@ -50,6 +33,25 @@
       color: #4CAF50;
     }
 
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .tips {
+      display: none;
+      margin-top: 10px;
+    }
+
     footer {
       text-align: center;
       padding: 15px;
@@ -62,44 +64,41 @@
 
 <header>
   <h1>Animal Care Guide</h1>
-  <p>Learn how to properly care for your animals 🐾</p>
+  <p>Click the buttons to learn how to care for animals 🐾</p>
 </header>
-
-<nav>
-  <a href="#dogs">Dogs</a>
-  <a href="#cats">Cats</a>
-  <a href="#birds">Birds</a>
-</nav>
 
 <div class="container">
 
-  <div class="card" id="dogs">
+  <div class="card">
     <h2>🐶 Dog Care</h2>
-    <ul>
+    <button onclick="toggleTips('dogTips')">Show Care Tips</button>
+    <ul class="tips" id="dogTips">
       <li>Provide fresh food and water daily</li>
-      <li>Walk your dog regularly for exercise</li>
-      <li>Visit the vet for checkups</li>
-      <li>Groom your dog to keep fur clean</li>
+      <li>Walk your dog regularly</li>
+      <li>Take your dog to the vet</li>
+      <li>Groom your dog often</li>
     </ul>
   </div>
 
-  <div class="card" id="cats">
+  <div class="card">
     <h2>🐱 Cat Care</h2>
-    <ul>
+    <button onclick="toggleTips('catTips')">Show Care Tips</button>
+    <ul class="tips" id="catTips">
       <li>Keep the litter box clean</li>
-      <li>Feed a balanced diet</li>
-      <li>Provide toys for mental stimulation</li>
-      <li>Schedule vet visits</li>
+      <li>Feed healthy cat food</li>
+      <li>Provide toys and scratching posts</li>
+      <li>Visit the vet yearly</li>
     </ul>
   </div>
 
-  <div class="card" id="birds">
+  <div class="card">
     <h2>🐦 Bird Care</h2>
-    <ul>
-      <li>Clean the cage regularly</li>
-      <li>Provide fresh water and seeds</li>
-      <li>Allow time outside the cage</li>
-      <li>Keep birds in a safe, quiet area</li>
+    <button onclick="toggleTips('birdTips')">Show Care Tips</button>
+    <ul class="tips" id="birdTips">
+      <li>Clean the cage often</li>
+      <li>Provide fresh water and food</li>
+      <li>Let birds exercise safely</li>
+      <li>Keep birds in a calm space</li>
     </ul>
   </div>
 
@@ -108,6 +107,17 @@
 <footer>
   <p>© 2026 Animal Care Guide</p>
 </footer>
+
+<script>
+  function toggleTips(id) {
+    const tips = document.getElementById(id);
+    if (tips.style.display === "none" || tips.style.display === "") {
+      tips.style.display = "block";
+    } else {
+      tips.style.display = "none";
+    }
+  }
+</script>
 
 </body>
 </html>
