@@ -1,5 +1,3 @@
-# Animal-Care-Guide
-My app is a app that tells you how to take care of your animals.
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,44 +6,55 @@ My app is a app that tells you how to take care of your animals.
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f8fb;
       margin: 0;
-      padding: 0;
+      background-color: #f4f6f8;
     }
 
     header {
-      background-color: #4caf50;
+      background-color: #4CAF50;
       color: white;
       padding: 20px;
       text-align: center;
     }
 
-    .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
     }
 
-    .animal-card {
-      background: white;
-      border-radius: 10px;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
       padding: 15px;
       margin-bottom: 20px;
+      border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: #4caf50;
-    }
-
-    ul {
-      line-height: 1.6;
+      color: #4CAF50;
     }
 
     footer {
       text-align: center;
-      padding: 10px;
-      background-color: #ddd;
+      padding: 15px;
+      background-color: #333;
+      color: white;
     }
   </style>
 </head>
@@ -53,38 +62,44 @@ My app is a app that tells you how to take care of your animals.
 
 <header>
   <h1>Animal Care Guide</h1>
-  <p>Learn how to take care of your pets</p>
+  <p>Learn how to properly care for your animals 🐾</p>
 </header>
+
+<nav>
+  <a href="#dogs">Dogs</a>
+  <a href="#cats">Cats</a>
+  <a href="#birds">Birds</a>
+</nav>
 
 <div class="container">
 
-  <div class="animal-card">
-    <h2>🐕 Dog Care</h2>
+  <div class="card" id="dogs">
+    <h2>🐶 Dog Care</h2>
     <ul>
-      <li>Feed a balanced diet twice a day</li>
-      <li>Provide fresh water at all times</li>
-      <li>Take daily walks and exercise</li>
-      <li>Visit the vet regularly</li>
+      <li>Provide fresh food and water daily</li>
+      <li>Walk your dog regularly for exercise</li>
+      <li>Visit the vet for checkups</li>
+      <li>Groom your dog to keep fur clean</li>
     </ul>
   </div>
 
-  <div class="animal-card">
-    <h2>🐈 Cat Care</h2>
+  <div class="card" id="cats">
+    <h2>🐱 Cat Care</h2>
     <ul>
-      <li>Feed high-quality cat food</li>
-      <li>Clean the litter box daily</li>
-      <li>Provide scratching posts</li>
-      <li>Schedule vet checkups</li>
+      <li>Keep the litter box clean</li>
+      <li>Feed a balanced diet</li>
+      <li>Provide toys for mental stimulation</li>
+      <li>Schedule vet visits</li>
     </ul>
   </div>
 
-  <div class="animal-card">
-    <h2>🐰 Rabbit Care</h2>
+  <div class="card" id="birds">
+    <h2>🐦 Bird Care</h2>
     <ul>
-      <li>Give fresh hay and vegetables</li>
-      <li>Keep their living area clean</li>
-      <li>Handle gently</li>
-      <li>Provide chew toys</li>
+      <li>Clean the cage regularly</li>
+      <li>Provide fresh water and seeds</li>
+      <li>Allow time outside the cage</li>
+      <li>Keep birds in a safe, quiet area</li>
     </ul>
   </div>
 
