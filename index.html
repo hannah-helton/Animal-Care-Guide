@@ -17,7 +17,8 @@
     select {
       padding: 10px;
       font-size: 16px;
-      margin-top: 10px;
+      margin: 10px 0;
+      width: 250px;
     }
 
     .info-box {
@@ -40,19 +41,24 @@
 
   <h1>Animal Care Guide 🐾</h1>
 
-  <label for="animalSelect">Choose an animal:</label><br>
-  <select id="animalSelect" onchange="showCare()">
-    <option value="">-- Select an animal --</option>
-
-    <!-- Pets -->
+  <!-- PETS DROPDOWN -->
+  <label for="petSelect"><strong>Pets</strong></label><br>
+  <select id="petSelect" onchange="showPetCare()">
+    <option value="">-- Select a pet --</option>
     <option value="dog">Dog</option>
     <option value="cat">Cat</option>
     <option value="rabbit">Rabbit</option>
     <option value="bird">Bird</option>
     <option value="fish">Fish</option>
     <option value="hamster">Hamster</option>
+  </select>
 
-    <!-- Farm Animals -->
+  <br>
+
+  <!-- FARM ANIMALS DROPDOWN -->
+  <label for="farmSelect"><strong>Farm Animals</strong></label><br>
+  <select id="farmSelect" onchange="showFarmCare()">
+    <option value="">-- Select a farm animal --</option>
     <option value="cow">Cow</option>
     <option value="chicken">Chicken</option>
     <option value="horse">Horse</option>
@@ -65,70 +71,52 @@
   </div>
 
   <script>
-    function showCare() {
-      const animal = document.getElementById("animalSelect").value;
+    function showPetCare() {
+      document.getElementById("farmSelect").value = "";
+      const pet = document.getElementById("petSelect").value;
       const careInfo = document.getElementById("careInfo");
 
-      if (animal === "cow") {
+      if (pet === "dog") {
         careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Cow_female_black_white.jpg" alt="Cow">
-          <h3>Cow Care 🐄</h3>
-          <ul>
-            <li>Large pasture space</li>
-            <li>Fresh grass and hay</li>
-            <li>Clean water daily</li>
-          </ul>
-        `;
-      }
-      else if (animal === "chicken") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Chicken_2007.jpg" alt="Chicken">
-          <h3>Chicken Care 🐔</h3>
-          <ul>
-            <li>Secure coop</li>
-            <li>Grain and clean water</li>
-            <li>Protection from predators</li>
-          </ul>
-        `;
-      }
-      else if (animal === "horse") {
-        careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Horse_in_pasture.jpg" alt="Horse">
-          <h3>Horse Care 🐎</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Golde33443.jpg">
+          <h3>Dog Care 🐶</h3>
           <ul>
             <li>Daily exercise</li>
-            <li>Hay, grass, and fresh water</li>
-            <li>Regular grooming</li>
+            <li>Fresh food and water</li>
+            <li>Regular vet visits</li>
           </ul>
         `;
-      }
-      else if (animal === "pig") {
+      } else if (pet === "cat") {
         careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Pig_in_a_field.jpg" alt="Pig">
-          <h3>Pig Care 🐖</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg">
+          <h3>Cat Care 🐱</h3>
           <ul>
-            <li>Shaded outdoor space</li>
-            <li>Balanced feed</li>
-            <li>Cool mud or water area</li>
+            <li>Clean litter box</li>
+            <li>Scratching posts</li>
+            <li>Groom regularly</li>
           </ul>
         `;
-      }
-      else if (animal === "sheep") {
+      } else if (pet === "rabbit") {
         careInfo.innerHTML = `
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Sheep_in_field.jpg" alt="Sheep">
-          <h3>Sheep Care 🐑</h3>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Oryctolagus_cuniculus_Rcdo.jpg">
+          <h3>Rabbit Care 🐰</h3>
           <ul>
-            <li>Pasture grazing</li>
-            <li>Shearing when needed</li>
-            <li>Protection from weather</li>
+            <li>Hay-based diet</li>
+            <li>Room to hop</li>
+            <li>Gentle handling</li>
           </ul>
         `;
-      }
-      else {
-        careInfo.innerHTML = `<p>Select an animal to see care instructions.</p>`;
-      }
-    }
-  </script>
-
-</body>
-</html>
+      } else if (pet === "bird") {
+        careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Budgerigar_green.jpg">
+          <h3>Bird Care 🐦</h3>
+          <ul>
+            <li>Clean cage</li>
+            <li>Fresh food and water</li>
+            <li>Social interaction</li>
+          </ul>
+        `;
+      } else if (pet === "fish") {
+        careInfo.innerHTML = `
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Goldfish3.jpg">
+          <h3>Fi
