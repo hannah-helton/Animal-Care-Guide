@@ -3,32 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <title>Animal Care Guide</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f8fb;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     header {
       background-color: #4caf50;
       color: white;
       padding: 20px;
-      text-align: center;
     }
 
-    .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
+    .buttons {
+      margin: 20px;
     }
 
-    .animal-card {
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #4caf50;
+      color: white;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .card {
       background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
       border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
@@ -37,13 +52,8 @@
     }
 
     ul {
+      text-align: left;
       line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 10px;
-      background-color: #ddd;
     }
   </style>
 </head>
@@ -51,46 +61,57 @@
 
 <header>
   <h1>Animal Care Guide</h1>
-  <p>Learn how to take care of your pets</p>
+  <p>Click a button to learn how to care for each animal</p>
 </header>
 
-<div class="container">
-
-  <div class="animal-card">
-    <h2>🐕 Dog Care</h2>
-    <ul>
-      <li>Feed a balanced diet twice a day</li>
-      <li>Provide fresh water at all times</li>
-      <li>Take daily walks and exercise</li>
-      <li>Visit the vet regularly</li>
-    </ul>
-  </div>
-
-  <div class="animal-card">
-    <h2>🐈 Cat Care</h2>
-    <ul>
-      <li>Feed high-quality cat food</li>
-      <li>Clean the litter box daily</li>
-      <li>Provide scratching posts</li>
-      <li>Schedule vet checkups</li>
-    </ul>
-  </div>
-
-  <div class="animal-card">
-    <h2>🐰 Rabbit Care</h2>
-    <ul>
-      <li>Give fresh hay and vegetables</li>
-      <li>Keep their living area clean</li>
-      <li>Handle gently</li>
-      <li>Provide chew toys</li>
-    </ul>
-  </div>
-
+<div class="buttons">
+  <button onclick="showDog()">Dog</button>
+  <button onclick="showCat()">Cat</button>
+  <button onclick="showRabbit()">Rabbit</button>
 </div>
 
-<footer>
-  <p>© 2026 Animal Care Guide</p>
-</footer>
+<div class="card" id="animalCard">
+  <h2>Choose an animal 🐾</h2>
+  <p>Click a button above to see care tips.</p>
+</div>
+
+<script>
+  function showDog() {
+    document.getElementById("animalCard").innerHTML = `
+      <h2>🐕 Dog Care</h2>
+      <ul>
+        <li>Feed a balanced diet</li>
+        <li>Provide fresh water daily</li>
+        <li>Exercise and walk every day</li>
+        <li>Visit the vet regularly</li>
+      </ul>
+    `;
+  }
+
+  function showCat() {
+    document.getElementById("animalCard").innerHTML = `
+      <h2>🐈 Cat Care</h2>
+      <ul>
+        <li>Feed quality cat food</li>
+        <li>Clean litter box daily</li>
+        <li>Provide toys and scratching posts</li>
+        <li>Schedule vet checkups</li>
+      </ul>
+    `;
+  }
+
+  function showRabbit() {
+    document.getElementById("animalCard").innerHTML = `
+      <h2>🐰 Rabbit Care</h2>
+      <ul>
+        <li>Provide fresh hay and veggies</li>
+        <li>Keep cage clean</li>
+        <li>Handle gently</li>
+        <li>Give chew toys</li>
+      </ul>
+    `;
+  }
+</script>
 
 </body>
 </html>
