@@ -29,27 +29,27 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    h2 {
-      color: #4CAF50;
-    }
-
-    button {
+    .dropdown {
+      cursor: pointer;
       background-color: #4CAF50;
       color: white;
-      border: none;
-      padding: 10px 15px;
+      padding: 12px;
       border-radius: 5px;
-      cursor: pointer;
-      margin-top: 10px;
+      font-size: 18px;
     }
 
-    button:hover {
+    .dropdown:hover {
       background-color: #45a049;
     }
 
-    .tips {
+    .dropdown-content {
       display: none;
       margin-top: 10px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
     }
 
     footer {
@@ -64,42 +64,45 @@
 
 <header>
   <h1>Animal Care Guide</h1>
-  <p>Click the buttons to learn how to care for animals 🐾</p>
+  <p>Click each animal to view care tips 🐾</p>
 </header>
 
 <div class="container">
 
   <div class="card">
-    <h2>🐶 Dog Care</h2>
-    <button onclick="toggleTips('dogTips')">Show Care Tips</button>
-    <ul class="tips" id="dogTips">
-      <li>Provide fresh food and water daily</li>
-      <li>Walk your dog regularly</li>
-      <li>Take your dog to the vet</li>
-      <li>Groom your dog often</li>
-    </ul>
+    <div class="dropdown" onclick="toggleDropdown('dog')">🐶 Dog Care</div>
+    <div class="dropdown-content" id="dog">
+      <ul>
+        <li>Provide fresh food and water daily</li>
+        <li>Walk your dog regularly</li>
+        <li>Visit the vet for checkups</li>
+        <li>Groom your dog often</li>
+      </ul>
+    </div>
   </div>
 
   <div class="card">
-    <h2>🐱 Cat Care</h2>
-    <button onclick="toggleTips('catTips')">Show Care Tips</button>
-    <ul class="tips" id="catTips">
-      <li>Keep the litter box clean</li>
-      <li>Feed healthy cat food</li>
-      <li>Provide toys and scratching posts</li>
-      <li>Visit the vet yearly</li>
-    </ul>
+    <div class="dropdown" onclick="toggleDropdown('cat')">🐱 Cat Care</div>
+    <div class="dropdown-content" id="cat">
+      <ul>
+        <li>Keep the litter box clean</li>
+        <li>Feed a balanced diet</li>
+        <li>Provide toys and scratching posts</li>
+        <li>Schedule vet visits</li>
+      </ul>
+    </div>
   </div>
 
   <div class="card">
-    <h2>🐦 Bird Care</h2>
-    <button onclick="toggleTips('birdTips')">Show Care Tips</button>
-    <ul class="tips" id="birdTips">
-      <li>Clean the cage often</li>
-      <li>Provide fresh water and food</li>
-      <li>Let birds exercise safely</li>
-      <li>Keep birds in a calm space</li>
-    </ul>
+    <div class="dropdown" onclick="toggleDropdown('bird')">🐦 Bird Care</div>
+    <div class="dropdown-content" id="bird">
+      <ul>
+        <li>Clean the cage regularly</li>
+        <li>Provide fresh food and water</li>
+        <li>Allow safe exercise time</li>
+        <li>Keep birds in a calm area</li>
+      </ul>
+    </div>
   </div>
 
 </div>
@@ -109,13 +112,10 @@
 </footer>
 
 <script>
-  function toggleTips(id) {
-    const tips = document.getElementById(id);
-    if (tips.style.display === "none" || tips.style.display === "") {
-      tips.style.display = "block";
-    } else {
-      tips.style.display = "none";
-    }
+  function toggleDropdown(id) {
+    const content = document.getElementById(id);
+    content.style.display =
+      content.style.display === "block" ? "none" : "block";
   }
 </script>
 
