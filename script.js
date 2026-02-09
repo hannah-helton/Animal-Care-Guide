@@ -1,22 +1,22 @@
 const data = {
   pets: {
     Dog: {
-      care: "Dogs need daily exercise, fresh water, food, and love.",
-      img: "https://via.placeholder.com/200?text=Dog"
+      care: "Dogs need daily exercise, fresh water, healthy food, and love.",
+      img: "Dog.jpeg"
     },
     Cat: {
-      care: "Cats need clean litter boxes, food, water, and playtime.",
-      img: "https://via.placeholder.com/200?text=Cat"
+      care: "Cats need clean litter boxes, fresh water, food, and playtime.",
+      img: "Cat.jpeg"
     }
   },
   farm: {
     Cow: {
-      care: "Cows need grass or hay, clean water, and shelter.",
-      img: "https://via.placeholder.com/200?text=Cow"
+      care: "Cows need grass or hay, clean water, shelter, and regular care.",
+      img: "cow.jpeg"
     },
     Chicken: {
-      care: "Chickens need feed, water, and a safe coop.",
-      img: "https://via.placeholder.com/200?text=Chicken"
+      care: "Chickens need feed, clean water, and a safe coop to live in.",
+      img: "Chicken.jpeg"
     }
   }
 };
@@ -44,5 +44,8 @@ function showCare() {
 
   document.getElementById("animalName").textContent = animal;
   document.getElementById("careText").textContent = data[category][animal].care;
-  document.getElementById("animalImg").src = data[category][animal].img;
+
+  const img = document.getElementById("animalImg");
+  img.src = data[category][animal].img;
+  img.alt = animal;
 }
