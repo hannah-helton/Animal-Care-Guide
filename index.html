@@ -19,5 +19,118 @@
       padding: 15px;
       background: white;
       border-radius: 8px;
-      max-width: 520px;
+      max-width: 500px;
       margin-left: auto;
+      margin-right: auto;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background: #eef2ff;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐶 Animal Care Guide</h1>
+
+  <!-- Pets Section -->
+  <div class="section">
+    <h2>Pets</h2>
+    <select onchange="showPetInfo(this.value)">
+      <option value="">Select a pet</option>
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="fish">Fish</option>
+    </select>
+    <div id="petInfo" class="info"></div>
+  </div>
+
+  <!-- Farm Animals Section -->
+  <div class="section">
+    <h2>Farm Animals</h2>
+    <select onchange="showFarmInfo(this.value)">
+      <option value="">Select a farm animal</option>
+      <option value="cow">Cow</option>
+      <option value="chicken">Chicken</option>
+      <option value="horse">Horse</option>
+    </select>
+    <div id="farmInfo" class="info"></div>
+  </div>
+
+  <script>
+    function showPetInfo(animal) {
+      const petInfo = document.getElementById("petInfo");
+
+      if (animal === "dog") {
+        petInfo.innerHTML = `
+          <strong>Dog Care:</strong>
+          <ul>
+            <li>Daily exercise</li>
+            <li>Fresh water and dog food</li>
+            <li>Regular vet visits</li>
+          </ul>`;
+      } else if (animal === "cat") {
+        petInfo.innerHTML = `
+          <strong>Cat Care:</strong>
+          <ul>
+            <li>Clean litter box</li>
+            <li>Nutritious cat food</li>
+            <li>Playtime and rest</li>
+          </ul>`;
+      } else if (animal === "fish") {
+        petInfo.innerHTML = `
+          <strong>Fish Care:</strong>
+          <ul>
+            <li>Clean tank</li>
+            <li>Proper water temperature</li>
+            <li>Do not overfeed</li>
+          </ul>`;
+      } else {
+        petInfo.innerHTML = "";
+      }
+    }
+
+    function showFarmInfo(animal) {
+      const farmInfo = document.getElementById("farmInfo");
+
+      if (animal === "cow") {
+        farmInfo.innerHTML = `
+          <strong>Cow Care:</strong>
+          <ul>
+            <li>Fresh grass or hay</li>
+            <li>Clean water</li>
+            <li>Large open space</li>
+          </ul>`;
+      } else if (animal === "chicken") {
+        farmInfo.innerHTML = `
+          <strong>Chicken Care:</strong>
+          <ul>
+            <li>Secure coop</li>
+            <li>Grain and water</li>
+            <li>Protection from predators</li>
+          </ul>`;
+      } else if (animal === "horse") {
+        farmInfo.innerHTML = `
+          <strong>Horse Care:</strong>
+          <ul>
+            <li>Daily grooming</li>
+            <li>Exercise</li>
+            <li>Stable or pasture</li>
+          </ul>`;
+      } else {
+        farmInfo.innerHTML = "";
+      }
+    }
+  </script>
+
+</body>
+</html>
