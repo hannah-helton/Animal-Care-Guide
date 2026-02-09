@@ -1,209 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Animal Care Guide</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f7f6;
-      color: #333;
-    }
-    header {
-      background-color: #4CAF50;
-      color: white;
+      background-color: #f2f6ff;
       padding: 20px;
+    }
+
+    h1 {
       text-align: center;
     }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      background-color: #388E3C;
-      padding: 10px;
-    }
-    nav button {
-      background: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    nav button:hover {
-      background-color: #e0e0e0;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
+
+    .section {
+      margin-bottom: 30px;
+      padding: 15px;
       background: white;
       border-radius: 8px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    section {
-      display: none;
+
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
     }
-    section.active {
-      display: block;
-    }
-    h2 {
-      color: #4CAF50;
-    }
-    ul {
-      line-height: 1.8;
-    }
-    footer {
+
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background: #eef2ff;
+      border-radius: 5px;
       text-align: center;
-      padding: 15px;
-      background-color: #eee;
-      margin-top: 30px;
+    }
+
+    img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Animal Care Guide</h1>
-    <p>Learn how to properly care for different animals</p>
-  </header>
 
-  <nav>
-    <button onclick="showSection('dogs')">Dogs</button>
-    <button onclick="showSection('cats')">Cats</button>
-    <button onclick="showSection('birds')">Birds</button>
-    <button onclick="showSection('reptiles')">Reptiles</button>
-    <button onclick="showSection('fish')">Fish</button>
-    <button onclick="showSection('hamsters')">Hamsters</button>
-    <button onclick="showSection('horses')">Horses</button>
-    <button onclick="showSection('chickens')">Chickens</button>
-    <button onclick="showSection('quiz')">Quiz</button>
-  </nav>
+<h1>🐾 Animal Care Guide</h1>
 
-  <main>
-    <section id="dogs" class="active">
-      <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a" alt="Dog" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Dog Care</h2>
-      <ul>
-        <li>Provide fresh water and nutritious food daily</li>
-        <li>Take dogs for regular walks and exercise</li>
-        <li>Schedule regular vet checkups</li>
-        <li>Groom fur and trim nails as needed</li>
-        <li>Give attention, training, and love</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Dogs have a sense of smell up to 40 times stronger than humans!</p>
-    </section>
-
-    <section id="cats">
-      <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="Cat" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Cat Care</h2>
-      <ul>
-        <li>Clean litter box daily</li>
-        <li>Provide fresh water and balanced food</li>
-        <li>Brush fur regularly</li>
-        <li>Provide scratching posts and toys</li>
-        <li>Visit the vet for vaccinations</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Cats can rotate their ears 180 degrees.</p>
-    </section>
-
-    <section id="birds">
-      <img src="https://images.unsplash.com/photo-1501706362039-c6e80948dce1" alt="Bird" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Bird Care</h2>
-      <ul>
-        <li>Keep cage clean and spacious</li>
-        <li>Provide fresh water and bird-safe food</li>
-        <li>Allow time outside the cage for exercise</li>
-        <li>Provide toys for mental stimulation</li>
-        <li>Avoid drafts and extreme temperatures</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Some birds can recognize themselves in mirrors.</p>
-    </section>
-
-    <section id="reptiles">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Reptile" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Reptile Care</h2>
-      <ul>
-        <li>Maintain proper heat and lighting</li>
-        <li>Provide species-appropriate food</li>
-        <li>Keep enclosure clean</li>
-        <li>Monitor humidity levels</li>
-        <li>Handle gently and minimally</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Reptiles are cold-blooded and rely on their environment to control body temperature.</p>
-    </section>
-
-    <section id="fish">
-      <img src="https://images.unsplash.com/photo-1504470695779-75300268aa0e" alt="Fish" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Fish Care</h2>
-      <ul>
-        <li>Keep the tank clean and properly filtered</li>
-        <li>Feed the correct amount of fish food</li>
-        <li>Maintain proper water temperature</li>
-        <li>Do not overcrowd the tank</li>
-        <li>Check water quality regularly</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Fish can recognize their owners!</p>
-    </section>
-
-    <section id="hamsters">
-      <img src="https://images.unsplash.com/photo-1615474634824-f45fb12bb7c3" alt="Hamster" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Hamster Care</h2>
-      <ul>
-        <li>Provide a clean cage with bedding</li>
-        <li>Give fresh water daily</li>
-        <li>Feed hamster-safe food and treats</li>
-        <li>Provide an exercise wheel</li>
-        <li>Handle gently</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Hamsters can store food in their cheeks until they are full.</p>
-    </section>
-
-    <section id="horses">
-      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429" alt="Horse" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Horse Care</h2>
-      <ul>
-        <li>Provide plenty of fresh water at all times</li>
-        <li>Feed hay, grass, and grain as needed</li>
-        <li>Ensure daily exercise and turnout</li>
-        <li>Clean hooves regularly and schedule farrier visits</li>
-        <li>Arrange routine veterinary checkups</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Horses can sleep both standing up and lying down.</p>
-    </section>
-
-    <section id="chickens">
-      <img src="https://images.unsplash.com/photo-1509475826633-fed577a2c71b" alt="Chickens" style="width:100%;max-height:300px;object-fit:cover;border-radius:8px;">
-      <h2>Chicken Care</h2>
-      <ul>
-        <li>Provide a clean, secure coop</li>
-        <li>Give access to fresh water daily</li>
-        <li>Feed chicken feed and safe scraps</li>
-        <li>Collect eggs regularly</li>
-        <li>Protect chickens from predators</li>
-      </ul>
-      <p><strong>Fun Fact:</strong> Chickens can remember over 100 different faces.</p>
-    </section>
-
-    <section id="quiz">
-      <h2>Animal Fun Facts Quiz</h2>
-      <p>Test what you learned from the fun facts!</p>
-
-      <form id="quizForm">
-        <p><strong>1. Which a
-
-  <footer>
-    <p>Animal Care Guide © 2026</p>
-  </footer>
-
-  <script>
-    function showSection(sectionId) {
-      const sections = document.querySelectorAll('main section');
-      sections.forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-    }
-  </script>
-</body>
-</html>
+<!-- Pets -->
+<div class="section">
+  <h2>Pets</h2>
+  <select onchange="showPetInfo(this.value)">
+    <option
