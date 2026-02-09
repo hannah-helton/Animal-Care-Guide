@@ -6,146 +6,108 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f2f6ff;
+      margin: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
       padding: 20px;
     }
 
-    h1 {
-      text-align: center;
-    }
-
-    .section {
-      margin-bottom: 30px;
+    .card {
+      background-color: white;
       padding: 15px;
-      background: white;
+      margin-bottom: 20px;
       border-radius: 8px;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
+    h2 {
+      color: #4CAF50;
     }
 
-    .info {
-      margin-top: 15px;
-      padding: 10px;
-      background: #eef2ff;
-      border-radius: 5px;
+    footer {
       text-align: center;
-    }
-
-    img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
+      padding: 15px;
+      background-color: #333;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-<h1>🐾 Animal Care Guide</h1>
+<header>
+  <h1>Animal Care Guide</h1>
+  <p>Learn how to properly care for your animals 🐾</p>
+</header>
 
-<!-- Pets -->
-<div class="section">
-  <h2>Pets</h2>
-  <select onchange="showPetInfo(this.value)">
-    <option value="">Select a pet</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="fish">Fish</option>
-  </select>
-  <div id="petInfo" class="info"></div>
+<nav>
+  <a href="#dogs">Dogs</a>
+  <a href="#cats">Cats</a>
+  <a href="#birds">Birds</a>
+</nav>
+
+<div class="container">
+
+  <div class="card" id="dogs">
+    <h2>🐶 Dog Care</h2>
+    <ul>
+      <li>Provide fresh food and water daily</li>
+      <li>Walk your dog regularly for exercise</li>
+      <li>Visit the vet for checkups</li>
+      <li>Groom your dog to keep fur clean</li>
+    </ul>
+  </div>
+
+  <div class="card" id="cats">
+    <h2>🐱 Cat Care</h2>
+    <ul>
+      <li>Keep the litter box clean</li>
+      <li>Feed a balanced diet</li>
+      <li>Provide toys for mental stimulation</li>
+      <li>Schedule vet visits</li>
+    </ul>
+  </div>
+
+  <div class="card" id="birds">
+    <h2>🐦 Bird Care</h2>
+    <ul>
+      <li>Clean the cage regularly</li>
+      <li>Provide fresh water and seeds</li>
+      <li>Allow time outside the cage</li>
+      <li>Keep birds in a safe, quiet area</li>
+    </ul>
+  </div>
+
 </div>
 
-<!-- Farm Animals -->
-<div class="section">
-  <h2>Farm Animals</h2>
-  <select onchange="showFarmInfo(this.value)">
-    <option value="">Select a farm animal</option>
-    <option value="cow">Cow</option>
-    <option value="chicken">Chicken</option>
-    <option value="horse">Horse</option>
-  </select>
-  <div id="farmInfo" class="info"></div>
-</div>
-
-<script>
-  function showPetInfo(animal) {
-    const petInfo = document.getElementById("petInfo");
-
-    if (animal === "dog") {
-      petInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="Dog">
-        <strong>Dog Care:</strong>
-        <ul>
-          <li>Daily exercise</li>
-          <li>Fresh food and water</li>
-          <li>Regular vet visits</li>
-        </ul>`;
-    } else if (animal === "cat") {
-      petInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131" alt="Cat">
-        <strong>Cat Care:</strong>
-        <ul>
-          <li>Clean litter box</li>
-          <li>Nutritious food</li>
-          <li>Play and rest</li>
-        </ul>`;
-    } else if (animal === "fish") {
-      petInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Fish">
-        <strong>Fish Care:</strong>
-        <ul>
-          <li>Clean tank</li>
-          <li>Correct water temperature</li>
-          <li>Do not overfeed</li>
-        </ul>`;
-    } else {
-      petInfo.innerHTML = "";
-    }
-  }
-
-  function showFarmInfo(animal) {
-    const farmInfo = document.getElementById("farmInfo");
-
-    if (animal === "cow") {
-      farmInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1545468250-0c7efc7f9c4e" alt="Cow">
-        <strong>Cow Care:</strong>
-        <ul>
-          <li>Grass or hay</li>
-          <li>Fresh water</li>
-          <li>Open space</li>
-        </ul>`;
-    } else if (animal === "chicken") {
-      farmInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1509474520651-53cf6a80536f" alt="Chicken">
-        <strong>Chicken Care:</strong>
-        <ul>
-          <li>Safe coop</li>
-          <li>Grain and water</li>
-          <li>Protection from predators</li>
-        </ul>`;
-    } else if (animal === "horse") {
-      farmInfo.innerHTML = `
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Horse">
-        <strong>Horse Care:</strong>
-        <ul>
-          <li>Daily grooming</li>
-          <li>Exercise</li>
-          <li>Stable or pasture</li>
-        </ul>`;
-    } else {
-      farmInfo.innerHTML = "";
-    }
-  }
-</script>
+<footer>
+  <p>© 2026 Animal Care Guide</p>
+</footer>
 
 </body>
 </html>
